@@ -78,7 +78,8 @@
                 <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Denominacion</th>
-                <th scope="col">Horas</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Estado</th>
                 <th scope="col">Modificar</th>
                 </tr>
             </thead>
@@ -88,12 +89,13 @@
             
                 <tr>
                     <th scope="row">{{ $item->id}}</th>
-                    <td>{{ $item->denCur}}</td>
                     <td>
                         <a href="{{ route('Curso.xCurDetalle',  $item->id)}}">
-                        {{ $item->hrsCur}}
+                        {{ $item->denCur}}
                         </a>
                     </td>
+                    <td>{{ $item->tipCur}}</td>
+                    <td>{{ $item->estCur}}</td>
                     <td>
                         <form action="{{ route('Curso.xCurEliminar', $item->id) }}" method="post" class="d-inline">
                             @method('DELETE')
